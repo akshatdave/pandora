@@ -15,7 +15,7 @@ Official PyTorch implementation of Pandora: an inverse rendering technique that 
 
 accepted for ECCV 2022
 
-![Teaser Animation](https://akshatdave.github.io/pandora/video/teaser_animation.mp4)
+![Teaser Animation](media/teaser_animation.gif)
 
 ## Setting up
 ### Loading conda environment
