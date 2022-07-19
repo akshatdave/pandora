@@ -52,32 +52,32 @@ model:
   white_bkgd: False
   use_env_mlp: rough_mask_envmap_MLP
   env_mlp_type: no_fres # Options fres_input, no_fres, fres_mlp
-  use_mask: True
-  sh_embed: True
+  use_mask: True # Toggle whether to use mask network
+  sh_embed: True # Toggle whether to use spherical harmonics embeddings for illumination network
   disable_fres: False
 
 training:
   speed_factor: 10.0
 
   lr: 5.0e-4
-  w_eikonal: 0.1
-  w_s1_s2: 1.0
-  w_mask: 1.
-  w_dop: 0.0
-  w_aolp: 0.0
+  w_eikonal: 0.1 # Penalty term for training SDF
+  w_s1_s2: 1.0 # Weight for penalty from S1 and S2 (polarization) loss
+  w_mask: 1. # Weight for mask function loss
+  w_dop: 0.0 # Weight for DOP loss
+  w_aolp: 0.0 # Weight for AoLP loss
   learn_pi2_ambiguity: False
   mask_specular: False
   mask_target_object: False
   mask_target_horizon: False
-  num_no_s1_s2: 1000
+  num_no_s1_s2: 1000 # Number of epochs without polarization loss, to help with SDF learning in early stages
   grad_norm_max: 15
   loss_type: l1
-  loss_space: linear
+  loss_space: linear # Toggle SRGB or Linear space for loss
   w_spec_reg: 0.
 
   log_root_dir: "logs"
 
-  num_iters: 200000
+  num_iters: 200000 # Total number of epochs
 
   # lr decay
   scheduler:
